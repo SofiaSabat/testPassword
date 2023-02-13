@@ -1,0 +1,28 @@
+<div class="container">
+  <label class="label" for="passwordInput">Ckeck your password`s strength: </label>
+  <input type="text" name="passwordInput" (input)="checkPassStrength($event)" />
+
+  <div class="strength-section" [ngClass]="{
+   'grey': password === '',
+   'red': passwordStrength === 'easy' ||  passwordStrength === 'short',
+   'yellow': passwordStrength === 'medium', 
+    'green': passwordStrength === 'strong', 
+    'empty': passwordStrength === 'empty' }">
+  </div>
+
+  <div class="strength-section" [ngClass]="{ 
+    'grey': password === '' || passwordStrength ==='easy' , 
+    'red': passwordStrength === 'short',
+    'yellow':passwordStrength  === 'medium', 
+    'green': passwordStrength === 'strong', 
+    'empty': passwordStrength === 'empty' }">
+  </div>
+
+  <div class="strength-section" [ngClass]="{ 
+    'grey': password === '' || passwordStrength === 'medium' || passwordStrength ==='easy', 
+    'red': passwordStrength === 'short',
+    'green': passwordStrength === 'strong' , 
+    'empty': passwordStrength === 'empty'}">
+  </div>
+
+</div>
